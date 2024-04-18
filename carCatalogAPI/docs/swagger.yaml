@@ -1,0 +1,119 @@
+basePath: /
+host: localhost:9000
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Car Catalog server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Car Catalog API
+  version: "1.0"
+paths:
+  /:
+    get:
+      description: get cars from db
+      parameters:
+      - description: get car by regNum
+        in: query
+        name: regNum
+        type: string
+      - description: get car by mark
+        in: query
+        name: mark
+        type: string
+      - description: get car by model
+        in: query
+        name: model
+        type: string
+      - description: get car by year
+        in: query
+        name: year
+        type: integer
+      - description: get car by owner's name
+        in: query
+        name: name
+        type: string
+      - description: get car by owner's surname
+        in: query
+        name: surname
+        type: string
+      - description: get car by owners patronymic
+        in: query
+        name: patronymic
+        type: integer
+      produces:
+      - application/json
+      responses: {}
+      summary: GetCars
+  /add:
+    post:
+      consumes:
+      - application/json
+      description: add cars to db
+      parameters:
+      - description: regNums
+        in: body
+        name: input
+        schema:
+          items:
+            type: string
+          type: array
+      produces:
+      - application/json
+      responses: {}
+      summary: AddCars
+  /delete:
+    get:
+      description: delete car from db
+      parameters:
+      - description: delete car by regNum
+        in: query
+        name: regNum
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Delete
+  /update:
+    get:
+      description: update cars in db
+      parameters:
+      - description: update car by regNum
+        in: query
+        name: regNum
+        required: true
+        type: string
+      - description: update car by mark
+        in: query
+        name: mark
+        type: string
+      - description: update car by model
+        in: query
+        name: model
+        type: string
+      - description: update car by year
+        in: query
+        name: year
+        type: integer
+      - description: update car by owner's name
+        in: query
+        name: name
+        type: string
+      - description: update car by owner's surname
+        in: query
+        name: surname
+        type: string
+      - description: update car by owners patronymic
+        in: query
+        name: patronymic
+        type: integer
+      produces:
+      - application/json
+      responses: {}
+      summary: Update
+swagger: "2.0"
